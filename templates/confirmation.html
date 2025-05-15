@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Confirmation</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: #fff;
+            border-radius: 12px;
+            padding: 40px 50px;
+            width: 100%;
+            max-width: 480px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: #4a4a4a;
+            letter-spacing: 1.2px;
+        }
+
+        p {
+            margin: 15px 0;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .highlight {
+            font-weight: 600;
+            color: #667eea;
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        /* Responsive */
+        @media (max-width: 540px) {
+            .container {
+                padding: 25px 25px;
+                margin: 0 10px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Confirmation d'Inscription</h1>
+        <p>Merci, <span class="highlight">{{ inscription.prenom }} {{ inscription.nom }}</span>! Votre inscription a été enregistrée avec succès.</p>
+        <p>Numéro d'inscription: <span class="highlight">{{ inscription.numero_inscription }}</span></p>
+        <p>Nous vous félicitons et vous souhaitons bonne chance pour votre concours!</p>
+        <div class="footer">
+            <p>&copy; {{ current_year }} Votre Établissement</p>
+        </div>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block titre %}Reçu d'inscription{% endblock %}
+
+{% block content %}
+<div class="max-w-3xl mx-auto mt-12 bg-white p-8 shadow rounded-lg">
+    <h2 class="text-2xl font-bold mb-6 text-blue-700">Reçu d'inscription</h2>
+
+    <ul class="space-y-2 text-gray-700">
+        <li><strong>Numéro :</strong> {{ inscription.numero_inscription }}</li>
+        <li><strong>Nom :</strong> {{ inscription.nom }}</li>
+        <li><strong>Prénom :</strong> {{ inscription.prenom }}</li>
+        <li><strong>Email :</strong> {{ inscription.email }}</li>
+        <li><strong>Niveau d'étude :</strong> {{ inscription.niveauEtude }}</li>
+        <li><strong>Concours :</strong> {{ inscription.get_concoursSouhaiter_display }}</li>
+        <li><strong>Établissement d'origine :</strong> {{ inscription.etablissementOrigine }}</li>
+        <li><strong>Date d'inscription :</strong> {{ inscription.date_inscription|date:"d/m/Y H:i" }}</li>
+    </ul>
+
+    <div class="mt-6 text-right">
+        <a href="{% url 'inscription' %}" class="bg-gray-200 px-4 py-2 rounded hover:bg-gray-300">Nouvelle inscription</a>
+    </div>
+</div>
+{% endblock %}
